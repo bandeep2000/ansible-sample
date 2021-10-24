@@ -1,0 +1,38 @@
+
+- name: Update web servers
+  hosts: development
+  gather_facts: true
+  vars_files:
+    - "environments/development/group_vars/web.yml"
+
+  tasks:
+   
+  - name: Printing the environment​ variable in Ansible
+    debug:
+      msg: "{{ lookup('env','HOME') }}"
+  
+  - name: print variable
+    debug:
+      msg: "{{hello1}}"
+
+  - name: Check kubectl output
+    command: ls -l
+    changed_when: false
+    register: get_pods
+    no_log: true
+
+  - debug:  # noqa unnamed-task
+     msg: "{{ get_pods.stdout }}"
+
+  - name: Distribution
+    debug: msg="{{ ansible_distribution }}"
+  - name: Distribution version
+    debug: msg="{{ ansible_distribution_version}}"
+  - name: Distribution major version
+    debug: msg="{{ ansible_distribution_major_version }}"
+  - name: get issue
+    shell: cat /etc/issue
+    register: out1
+  - name: print1
+    debug:
+      msg: "{{out1}}"
