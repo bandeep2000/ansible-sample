@@ -4,8 +4,13 @@
   gather_facts: true
   vars_files:
     - "environments/development/group_vars/web.yml"
+    - "environments/development/host_vars/{{ ansible_hostname }}.yml"
 
   tasks:
+  - name: Hostname
+    debug: msg="{{ ansible_hostname }}"
+  - name: print host_vars
+    debug: msg="{{ test1 }}"
    
   - name: Printing the environment​ variable in Ansible
     debug:
