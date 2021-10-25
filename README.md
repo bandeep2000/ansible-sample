@@ -1,4 +1,4 @@
-Sample ansible folder structure 
+# Sample ansible folder structure 
 
 Steps:
 1. Install ansible on your laptop
