@@ -4,7 +4,7 @@ Steps:
 1. Install ansible on your laptop
 2. create ssh public/private key and uplaod public key 
 
-ansible-playbook -i environments/development/inventory --private-key <private key>
+ansible-playbook -i environments/development/inventory --private-key <private key> p1.yml
 
 
 # Some docs
