@@ -5,6 +5,8 @@
   vars_files:
     - "environments/development/group_vars/web.yml"
     - "environments/development/host_vars/{{ ansible_hostname }}.yml"
+  roles:
+  - sample-role1
 
   tasks:
   - name: Hostname
